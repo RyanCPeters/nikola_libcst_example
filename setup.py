@@ -12,11 +12,9 @@ from setuptools import setup, find_packages
 import pathlib
 
 here = pathlib.Path(__file__).resolve().parent
-# print(here.parent)
-# print(here.resolve())
 
 # Get the long description from the README file
-long_description = (here.resolve() / 'README.md').read_text(encoding='utf-8')
+long_description = here.joinpath('README.md').read_text(encoding='utf-8')
 
 # Arguments marked as "Required" below must be included for upload to PyPI.
 # Fields marked as "Optional" may be commented out.
@@ -45,7 +43,7 @@ setup(
         # This is a one-line description or tagline of what your project does. This
         # corresponds to the "Summary" metadata field:
         # https://packaging.python.org/specifications/core-metadata/#summary
-        description="An example of how to modify Nikola `conf.py` files according to contents of a theme's conf.py.sample file",  # Optional
+        description="An example of how to modify Nikola `conf.py` files according to contents of a theme's `conf.py.sample` file",  # Optional
         
         # This is an optional longer description of your project that represents
         # the body of text which users will see when they visit PyPI.
@@ -77,11 +75,11 @@ setup(
         
         # This should be your name or the name of the organization which owns the
         # project.
-        author='Ryan C. Peters',  # Optional
+        author='RyanCPeters',  # Optional
         
         # This should be a valid email address corresponding to the author listed
         # above.
-        author_email='petersryan84@gmail.com',  # Optional
+        author_email='',  # Optional
         
         # Classifiers help users find your project by categorizing it.
         #
@@ -105,6 +103,7 @@ setup(
             # checked by 'pip install'. See instead 'python_requires' below.
             'Programming Language :: Python :: 3',
             'Programming Language :: Python :: 3.8',
+            'Programming Language :: Python :: 3.9',
             'Programming Language :: Python :: 3 :: Only',
             ],
         # This field adds keywords for your project which will appear on the
@@ -113,7 +112,7 @@ setup(
         # Note that this is a list of additional keywords, separated
         # by commas, to be used to assist searching for the distribution in a
         # larger catalog.
-        keywords=['image', 'artificial', 'machine', 'learning', "visualization"],  # Optional
+        keywords=['ast','nikola','libcst'],  # Optional
         
         # When your source code is in a subdirectory under the project root, e.g.
         # `src/`, it is necessary to specify the `package_dir` argument.
@@ -146,9 +145,8 @@ setup(
         # For an analysis of "install_requires" vs pip's requirements files see:
         # https://packaging.python.org/en/latest/requirements.html
         install_requires=[
-            "numpy>=1.18.5",
-            "tensorflow>=2.3",
-            "h5glance",
+            "nikola",
+            "libcst",
             ],  # Optional
         
         # List additional groups of dependencies here (e.g. development
@@ -186,9 +184,7 @@ setup(
         # executes the function `main` from this package when invoked:
         entry_points={  # Optional
             'console_scripts': [
-                'unet=UnetVisualized.unet_source.__main__:main',
-                'unet_train=UnetVisualized.unet_source.__main__:main',
-                "unet_visualize=UnetVisualized.presentation_tools.__main__:main"
+                'nikola_manip=nikola_libcst_fix.theme_config_adjustments:example_start'
                 ],
             },
         
@@ -201,10 +197,10 @@ setup(
         # issues, where the source is hosted, where to say thanks to the package
         # maintainers, and where to support the project financially. The key is
         # what's used to render the link text on PyPI.
-        project_urls={  # Optional
-            'Bug Reports': 'https://github.com/RyanCPeters/UnetVisualized/issues',
-            'Source': 'https://github.com/RyanCPeters/UnetVisualized',
-            },
+        # project_urls={  # Optional
+        #     'Bug Reports': '',
+        #     'Source': '',
+        #     },
         )
 
 

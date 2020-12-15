@@ -3,6 +3,7 @@ import libcst as cst
 import difflib
 from nikola_libcst_fix.theme_visitor_subclasses import ThemeCollector,ThemeTransformer
 
+here = pl.Path(__file__).resolve().parent
 # input_dialogue is used in the theme_update function
 input_dialogue = "Should we overwrite conf.py with the modified ast?\n\t[Y]/n\n"
 
@@ -82,7 +83,27 @@ def theme_update(theme_conf_path:pl.Path or str,
               "\n\t\t-- I didn't define things like class definitions and update-assignment operations in this example")
 
 
+def example_start():
+    safe_to_proceed = True
+    base_conf_py_path = here.joinpath("some_site_structure/conf.py").resolve()
+    if not base_conf_py_path.exists():
+        safe_to_proceed = False
+        print("The example `conf.py` file isn't where we expected it to be."
+              "Please check the following path for where things might have gone wrong:"
+              f"\n{str(base_conf_py_path)}"
+              "\n\tThen modify the call to base_conf_py_path = here.joinpath('some_site_structure/conf.py').resolve()")
+    theme_conf_py_path = here.joinpath("some_site_structure/themes/some_theme/conf.py.sample").resolve()
+    if not theme_conf_py_path.exists():
+        safe_to_proceed = False
+        print("The example `conf.py` file isn't where we expected it to be."
+              "Please check the following path for where things might have gone wrong:"
+              f"\n{str(base_conf_py_path)}"
+              "\n\tThen modify the call to theme_conf_py_path = here.joinpath('some_site_structure/themes/some_theme/conf.py.sample').resolve()")
+    if safe_to_proceed:
+        theme_update(theme_conf_py_path,
+                     base_conf_py_path)
+    else:
+        print("Until the path to the example config files is resolved, we can't run the example")
+
 if __name__ == "__main__":
-    here = pl.Path(__file__).resolve().parent
-    theme_update(here.joinpath("some_site_structure/themes/some_theme/conf.py.sample"),
-                 here.joinpath("some_site_structure/conf.py"))
+    example_start()
