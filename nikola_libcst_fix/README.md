@@ -6,7 +6,7 @@ __*This example is mostly a proof of concept*__, and would require non-trivial e
 ### Setup:
 
 1. Using `git` clone this repo to your desire location and cd into it:
-   * `git clone https://`
+   * `git clone https://github.com/RyanCPeters/nikola_libcst_example.git`
 2. Get you a virtual environment manager... 
    * You can use either of the following, though I only have personal experience with Miniconda, so my further instructions might be specific to that tool (I've never properly investigated `venv`):
       * Anaconda's [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
@@ -15,6 +15,8 @@ __*This example is mostly a proof of concept*__, and would require non-trivial e
    * In a conda prompt:
    ```bash
    # you may need to update conda first, but that's as simple as `conda update conda`
-   >conda create -n your_env_name python pip
+   $ conda create -n your_env_name python pip
    # ... download and installation output
-   >
+   $ cd /path/to/your/clone/of/nikola_libcst_example/
+   # now you should be 
+   ```
