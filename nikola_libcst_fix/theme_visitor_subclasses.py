@@ -7,8 +7,8 @@ class ThemeCollector(cst.CSTVisitor):
         super().__init__()
         # stack for storing the canonical name of the current function, used for generating unique keys to each node.
         self.stack: List[Tuple[str, ...]] = []
-        # replacement_targets will be the mapping of fields from a theme's conf.py.sample file which need to be updated
-        # in the site's conf.py file.
+        # replacement_targets will be the mapping of fields from a theme's conf.py.backup.sample file which need to be updated
+        # in the site's conf.py.backup file.
         #   Note: initializing replacement_targets with an entry for the `THEME` variable just in case the theme's conf
         #         file forgets to include it.
         self.replacement_targets:Dict[Tuple[str, ...], cst.CSTNode] = {

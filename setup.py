@@ -43,7 +43,7 @@ setup(
         # This is a one-line description or tagline of what your project does. This
         # corresponds to the "Summary" metadata field:
         # https://packaging.python.org/specifications/core-metadata/#summary
-        description="An example of how to modify Nikola `conf.py` files according to contents of a theme's `conf.py.sample` file",  # Optional
+        description="An example of how to modify Nikola `conf.py.backup` files according to contents of a theme's `conf.py.backup.sample` file",  # Optional
         
         # This is an optional longer description of your project that represents
         # the body of text which users will see when they visit PyPI.
@@ -147,6 +147,7 @@ setup(
         install_requires=[
             "nikola",
             "libcst",
+            "PyYAML",
             ],  # Optional
         
         # List additional groups of dependencies here (e.g. development
@@ -184,7 +185,8 @@ setup(
         # executes the function `main` from this package when invoked:
         entry_points={  # Optional
             'console_scripts': [
-                'nikola_manip=nikola_libcst_fix.theme_config_adjustments:example_start'
+                'programmatic_demo_simple=nikola_libcst_fix.theme_config_adjustments:simple_demo',
+                'programmatic_demo=nikola_libcst_fix.theme_config_adjustments:demo_from_terminal'
                 ],
             },
         

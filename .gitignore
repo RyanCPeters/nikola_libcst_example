@@ -1,0 +1,19 @@
+# ignore the Pycharm autogen files
+/idea*
+*idea/
+__pycache__/
+*.egg*/
+.doit*
+
+# ignores the dummy sites I used for testing
+dummy/
+**/some_site_structure/themes/
+!**/some_site_structure/themes/some_theme/
+
+# personal notes files
+ignore-*
+
+# runtime output files
+*.backup
+*difflog*
+modified_conf*

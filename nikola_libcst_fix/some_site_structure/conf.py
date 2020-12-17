@@ -92,7 +92,7 @@ BLOG_DESCRIPTION = "This is a demo site for Nikola."  # (translatable)
 # in the default language will be shown instead.
 
 # What is the default language?
-DEFAULT_LANG='en'
+DEFAULT_LANG = "en"
 
 # What other languages do you have?
 # The format is {"translationcode" : "path/to/translation" }
@@ -140,14 +140,10 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Home', 'fa fa-home'),
-        ('/archive.html', 'Archives', 'fa fa-folder-open'),
-        ('/categories/index.html', 'Tags', 'fa fa-tags'),
-        ('/rss.xml', 'RSS', 'fa fa-rss'),
-        ('https://getnikola.com', 'About me', 'fa fa-user'),
-        ('https://twitter.com/getnikola', 'My Twitter', 'fab fa-twitter'),
-        ('https://github.com/getnikola', 'My Github', 'fab fa-github'),
-    )
+        ("/archive.html", "Archive"),
+        ("/categories/", "Tags"),
+        ("/rss.xml", "RSS feed"),
+    ),
 }
 
 # Alternative navigation links. Works the same way NAVIGATION_LINKS does,
@@ -691,7 +687,7 @@ GITHUB_COMMIT_SOURCE = True
 # to the location of conf.py
 # OUTPUT_FOLDER = 'output'
 
-# where the "cache" of partial generated pelican_content should be located
+# where the "cache" of partial generated content should be located
 # default: 'cache'
 # CACHE_FOLDER = 'cache'
 
@@ -745,8 +741,8 @@ GITHUB_COMMIT_SOURCE = True
 # List of XPath expressions which should be used for finding headers
 # ({hx} is replaced by headers h1 through h6).
 # You must change this if you use a custom theme that does not use
-# "e-pelican_content entry-pelican_content" as a class for post and page contents.
-# HEADER_PERMALINKS_XPATH_LIST = ['*//div[@class="e-pelican_content entry-pelican_content"]//{hx}']
+# "e-content entry-content" as a class for post and page contents.
+# HEADER_PERMALINKS_XPATH_LIST = ['*//div[@class="e-content entry-content"]//{hx}']
 # Include *every* header (not recommended):
 # HEADER_PERMALINKS_XPATH_LIST = ['*//{hx}']
 
@@ -764,7 +760,7 @@ GITHUB_COMMIT_SOURCE = True
 # GZIP_COMMAND = None
 # Make sure the server does not return a "Accept-Ranges: bytes" header for
 # files compressed by this option! OR make sure that a ranged request does not
-# return partial pelican_content of another representation for these resources. Do not
+# return partial content of another representation for these resources. Do not
 # use this feature if you do not understand what this means.
 
 # #############################################################################
@@ -1172,17 +1168,17 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # By default, Nikola does not generates Atom files for indexes and links to
 # them. Generate Atom for tags by setting TAG_PAGES_ARE_INDEXES to True.
 # Atom feeds are built based on INDEX_DISPLAY_POST_COUNT and not FEED_LENGTH
-# Switch between plain-text summaries and full HTML pelican_content using the
+# Switch between plain-text summaries and full HTML content using the
 # FEED_TEASER option. FEED_LINKS_APPEND_QUERY is also respected. Atom feeds
 # are generated even for old indexes and have pagination link relations
 # between each other. Old Atom feeds with no changes are marked as archived.
 # GENERATE_ATOM = False
 
 # Only include teasers in Atom and RSS feeds. Disabling include the full
-# pelican_content. Defaults to True.
+# content. Defaults to True.
 # FEED_TEASERS = True
 
-# Strip HTML from Atom and RSS feed summaries and pelican_content. Defaults to False.
+# Strip HTML from Atom and RSS feed summaries and content. Defaults to False.
 # FEED_PLAIN = False
 
 # Number of posts in Atom and RSS feeds.
@@ -1233,7 +1229,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # <!-- End of custom search -->
 # """ % SITE_URL
 
-# Use pelican_content distribution networks for jQuery, twitter-bootstrap css and js,
+# Use content distribution networks for jQuery, twitter-bootstrap css and js,
 # and html5shiv (for older versions of Internet Explorer)
 # If this is True, jQuery and html5shiv are served from the Google CDN and
 # Bootstrap is served from BootstrapCDN (provided by MaxCDN)
@@ -1316,7 +1312,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 
 # Nikola supports Twitter Card summaries, but they are disabled by default.
 # They make it possible for you to attach media to Tweets that link
-# to your pelican_content.
+# to your content.
 #
 # Uncomment and modify to following lines to match your accounts.
 # Images displayed come from the `previewimage` meta tag.
@@ -1326,7 +1322,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 #     # 'card': 'summary',          # Card type, you can also use 'summary_large_image',
 #                                   # see https://dev.twitter.com/cards/types
 #     # 'site': '@website',         # twitter nick for the website
-#     # 'creator': '@username',     # Username for the pelican_content creator / author.
+#     # 'creator': '@username',     # Username for the content creator / author.
 # }
 
 # Bundle JS and CSS into single files to make site loading faster in a HTTP/1.1
@@ -1398,5 +1394,3 @@ GLOBAL_CONTEXT = {}
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
 GLOBAL_CONTEXT_FILLER = []
-
-DATE_FANCINESS = 2
