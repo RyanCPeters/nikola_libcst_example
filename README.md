@@ -94,8 +94,6 @@ Once you are ready to see the example's output, (from the command terminal) you 
    * `doit demo_call_examples` will display examples of calling the demo tasks from various contexts.
 
 
-This command is the terminal entry point configured by the seup.py file, it will build an abstract syntax tree (AST) of the theme's `conf.py.sample` file, along with anohter AST for the site's `conf.py` file. It will then output a `difflib.unified_diff(before, after)` of the `conf.py` file's before and after states -- printed to console.
-
 Checking against actual site structure:
 ---
-If you would like to run this example on a fully defined Nikola site, the easiest approach would be to copy your own example site folder into `/nikola_libcst_example` (the root folder for this repo) then call 
+If you would like to run this example on a fully defined Nikola site, the easiest approach would be to copy your own example site folder into `/nikola_libcst_example` (the root folder for this repo) then call `programmatic_demo -t <your preferred theme>` 
