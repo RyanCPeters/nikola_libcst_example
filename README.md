@@ -61,7 +61,7 @@ Setup:
    * This will create 2 console entry points for the demo, [`programmatic_demo_simple`](#entry-1) and [`programmatic_demo`](#entry-2) (descriptions bellow), along with ensuring we have all package dependencies.
    
 
-Inspecting the code:
+Inspecting the code
 ---
 You'll see that the relevant source code is found inside the `/nikola_libcst_fix/` folder.
 
@@ -97,6 +97,6 @@ Once you are ready to see the example's output, (from the command terminal) you 
    * `doit demo_call_examples` will display examples of calling the demo tasks from various contexts.
 
 
-Checking against actual site structure:
+Checking against actual site structure
 ---
 If you would like to run this example on a fully defined Nikola site, the easiest approach would be to copy your own example site folder into `/nikola_libcst_example` (the root folder for this repo) then call `programmatic_demo -t <your preferred theme>` 
