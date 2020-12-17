@@ -21,6 +21,9 @@ Setup:
       * my further instructions might be specific to Miniconda, as I've yet to properly investigated `venv`
 3. Create a virtual environment and activate it:
    * In your `conda` prompt:
+      * `conda create -n nikola_libcst_example python pip`
+      * `conda activate nikola_libcst_example`
+   * you should see something like this:
    ```shell script
     # you may need to update conda first, but that's as simple as `conda update conda`
     (base) PS /some/path/nikola_libcst_example> conda create -n nikola_libcst_example python pip
