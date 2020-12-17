@@ -2,7 +2,7 @@ This is just an example
 ===
 This is an example of how to use the [libCST](https://github.com/Instagram/LibCST) to programmatically modify a [Nikola](https://github.com/getnikola/nikola) site's `conf.py` file according to the contents of a chosen theme's `conf.py.sample` file.
 
-__*This example is mostly a proof of concept*__, and would require non-trivial evaluation to produce a more generalized solution for Nikola. Though, if properly leveraged it seems practical to conclude that a tool built on libCST could allow for greater compartmentalization of configuration files upon startup with a runtime config file generation script that can compose multiple files into the single conf.py file Nikola currently uses.
+__*This example is mostly a proof of concept*__, and would likely require non-trivial evaluation to produce a more generalized solution for all possible use cases in Nikola. Though, if properly leveraged it seems practical to conclude that a tool built on libCST could allow for greater compartmentalization of configuration files upon startup with a runtime config file generation script that can compose multiple files into the single conf.py file Nikola currently uses.
 
 Setup:
 ---
